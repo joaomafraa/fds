@@ -1,5 +1,10 @@
 from django.shortcuts import render
 
+# views.py
+
+
+from django.shortcuts import render
+
 from django.http import HttpResponse, Http404
 from .models import Pergunta, Resposta
 
@@ -86,3 +91,4 @@ class InserirRespostaView(View):
         pergunta.resposta_set.create(texto=texto, data_criacao=data_criacao, usuario=usuario)
 
         return redirect(reverse('forum:detalhe', args=[pergunta.id]))
+
